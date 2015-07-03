@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/profilepage.css">
+	</head>
+	<body>
+		<div id = "home_header">
+			<div class="header_home"><a href="/dashboard">Dashboard</a></div>
+			<div class="header_home"><a href="/profile">Profile(<%=username%>)</a></div>
+			<div class="header_home"><a href="/logout">Logout</a></div>
+		</div>
+
+		<div class = "profilepage_div" >
+			<form action="/editprofile" method = "POST">
+				<fieldset class = "profilepage_fieldset" >
+					<legend class = "profilepage_legend">Edit Profile</legend>
+						Name:<br>
+							<input type = "text" name = "name" value="<%=name %>"><br>
+						Username:<br>
+							<input id = "username" type = "text" name = "username" value="<%=username %>"><br>
+						Password:<br>
+							<input type = "password" name = "password" value="<%=password %>"><br>
+						Re-enter Password:<br>
+							<input type = "password" name = "reenterpassword" value="<%=reenterpassword %>"><br>
+						Age:<br>
+							<input type = "number" name = "age" min = "1" max = "70" value="<%=age %>"><br>
+						Gender:<br>
+							<input <% if(sex == "male"){ %> checked="checked"<% } %>class = "radio" type = "radio" name = "sex" value = "male">Male
+							<input <% if(sex == "female"){ %> checked="checked"<% } %>class = "radio" type = "radio" name = "sex" value = "female">Female<br>
+						Skills:<br>
+							<input <% if(JSON.parse(JSON.stringify(skills)).indexOf('C') > -1) { %>checked="checked"<% } %> class = "checkbox" type = "checkbox" name = "Skills" value = 'C'>C
+							<input <% if(JSON.parse(JSON.stringify(skills)).indexOf('C++') > -1) { %>checked="checked"<% } %>  class = "checkbox" type = "checkbox" name = "Skills" value = 'C++'>C++
+							<input <% if(JSON.parse(JSON.stringify(skills)).indexOf('JAVA') > -1) { %>checked="checked"<% } %>  class = "checkbox" type = "checkbox" name = "Skills" value = 'JAVA'>JAVA
+							<input <% if(JSON.parse(JSON.stringify(skills)).indexOf('PHP') > -1) { %>checked="checked"<% } %>  class = "checkbox" type = "checkbox" name = "Skills" value = 'PHP'>PHP<br>
+						Stream:<br>
+							<select name = "branch">
+								<option <% if(stream == "Electronics and communication Engineering"){ %> selected="selected"<% } %> name = "stream" value="Electronics and communication Engineering">Electronics and communication Engineering</option>
+								<option <% if(stream == "Computer Science Engineering"){ %> selected="selected"<% } %> name = "stream" value="Computer Science Engineering">Computer Science Engineering</option>
+								<option <% if(stream == "Electrical Engineering"){ %> selected="selected"<% } %> name = "stream" value="Electrical Engineering">Electrical Engineering</option>
+								<option <% if(stream == "Mechanical Engineering"){ %> selected="selected"<% } %> name = "stream" value="Mechanical Engineering">Mechanical Engineering</option>
+							</select><br>
+						Contact Number:<br>
+							<input  type = "text" name = "contactnumber" value="<%=contactnumber %>" ><br>
+						Email:<br>
+							<input  type = "text" name = "email" value="<%=email %>" ><br>
+						<input class = "submit" type = "submit" value = "submit">
+				</fieldset>
+			</form>
+		</div>
+
+		<div>
+			<form action="/upload" method = "POST" enctype="multipart/form-data" >
+				<img class = "profile_picture"src="<%=img %>" alt="userimage"/>
+				<div class = "buttons">
+					<input type="file" name="image" accept="image/*">
+					<input type = "submit" value = "Upload" name = "submit">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,245 @@
+/* 
+Custom CSS for...
+'Modern Business' HTML Theme by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* Global Styles */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.dropdown {
+    cursor:pointer;
+}
+
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.tab-pane {
+    margin-top: 15px;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+    padding: 50px 0;
+}
+
+.section-colored {
+    background-color: #e1e1e1;
+    /* change this to change the background color of a colored section */
+}
+
+.sidebar {
+    margin-top: 40px;
+}
+
+.sidebar ul {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+}
+
+/* Half Page Height Carousel Customization */
+.carousel {
+    height: 100%;
+    float:left;
+    width:100%;
+}
+
+.item,
+.active,
+.carousel-inner {
+    /*height: 500px;
+    width:100%;*/
+    height:100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+/* Footer Styles */
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+
+    #carousel_inner {
+        width:25%;
+        /* increases the carousel height so it looks good on phones */
+    }
+
+}
+
+/*carousel css*/
+
+#carousel_inner {
+    background: none repeat scroll 0 0 #f0f0f0;
+    float: left;
+    overflow: hidden;
+    width: 55%;
+}
+
+#carousel_ul {
+    list-style-type: none;
+    position: relative;
+    margin: 0px;
+    padding:0px;
+}
+
+#carousel_ul li {  
+    background: none repeat scroll 0 0 #000000;
+    float: left;
+    height: 110px;
+    padding: 0;
+    width: 200px;
+}
+  
+#carousel_ul li img {  
+    border: 0 none;
+    cursor: pointer;
+    height: 100%;
+    margin-bottom: -4px;
+    width: 100%;
+}  
+
+#left_scroll, #right_scroll {  
+    background: none repeat scroll 0 0 white;
+    float: left;
+    margin: 15px;
+    width: 4.5%;
+}
+
+#left_scroll img, #right_scroll img {   
+    cursor: pointer;
+    height: 80px;
+}
+
+#container {
+    float: left;
+    width: 82%;
+    margin:6% 0 0 18%;
+}
+
+.lightbox-background {
+    position: absolute;
+    background: #000;
+    opacity: 0.9;
+    top: 0px;
+    left: 0px;
+    height: 217%;
+    width: 100%;
+    display: none;
+}
+
+.lightbox-container {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    display: none;
+    z-index:9999;
+
+}
+
+#closeBtn {
+    float: right;
+}
+
+#numofpages {
+    float: left;
+    margin: 1% 0 0 40%;
+}
+
+#numofpages a {
+    margin-left: 14%;
+}
+
+.active {
+    color:red;
+}
+
+/*body homepage CSS*/
+.home_page {
+    background-color: -moz-html-cellhighlight;
+    margin: 1%;
+    padding: 1%;
+}
+.body_1 {
+    background-color: -moz-html-cellhighlight;
+    float: left;
+    margin: 1% 0.8% 1% 1%;
+    width: 31.5%;
+    padding: 1%;
+}
+/*CSS for service page*/
+#text {
+    float:left;
+}
+#text_1 {
+    float:left;
+}
+/*CSS for contact Us page*/
+.contact_us {
+    background-color: -moz-cellhighlight;
+    float: left;
+    margin: 5% 0 0;
+    padding: 2% 0% 2% 4%;
+    width: 100%;
+}
+/*CSS for Login page*/
+.login_form_1 {
+    background-color: -moz-cellhighlight;
+    margin: 0% 1% 16% 7%;
+    padding: 2%;
+}
+.login_tag{
+    font-size: 163%;
+    margin: 7% 0 0 7%;
+}
+/*SIGNUP Form CSS*/
+.signup_form_1{
+    background-color: -moz-cellhighlight;
+    margin: 2% 0 0 0%;
+    padding: 2%
+}
+.signup_tag{
+    font-size: 163%;
+    margin: 3% 0 0;
+}
+/*footer CSS*/
+.footer_1{
+    float:left;
+    width:100%;
+}
+/*Contact us form css*/
+.enquiry_form {
+    background-color: -moz-cellhighlight;
+    margin: 0% 1% 0% 7%;
+    padding: 2%;
+}
+/*.aftersubmit_tag {
+    background-color: lightgreen;
+    border: 1px solid black;
+    height: 50px;
+    margin: 0 0 0 31%;
+    text-align: center;
+    width: 30%;
+}*/
