@@ -179,7 +179,7 @@ footer {
 /*body homepage CSS*/
 .home_page {
     background-color: -moz-html-cellhighlight;
-    margin: 1%;
+    margin: 0 1% 0;
     padding: 1%;
 }
 .body_1 {

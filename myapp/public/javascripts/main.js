@@ -21,8 +21,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/", {templateUrl: "/views/homepage.html", controller: "PageCtrl"})
     // Pages
     .when("/about", {templateUrl: "/views/about_us.html", controller: "PageCtrl"})
-    .when("/login", {templateUrl: "../views/login.ejs", controller: "PageCtrl"})
-    .when("/signup", {templateUrl: "../views/signup.ejs", controller: "PageCtrl"})
+    .when("/login", {templateUrl: "../views/login.html", controller: "PageCtrl"})
+    .when("/signup", {templateUrl: "../views/signup.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "/views/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "/views/contact_us.html", controller: "PageCtrl"})
     .otherwise({
@@ -38,15 +38,16 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 });
 
 app.controller('contactUs', function($scope, $http){
+    $scope.errors = [];
     $scope.contactus = function(){
         $http.post('/contact_us',{
             name:$scope.name,
             email:$scope.email1,
             comment:$scope.comment,
         }).success(function(data, status) {
-            $scope.name = "";
-            $scope.email1 = "";
-            $scope.comment = "";
+            // $scope.name = "";
+            // $scope.email1 = "";
+            // $scope.comment = "";
             $scope.codeStatus = data;
         }).error(function(data, status) { 
         // called asynchronously if an error occurs
