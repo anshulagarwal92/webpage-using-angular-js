@@ -30,13 +30,11 @@ UserController.prototype = {
             skills: [req.body.Skills],
             stream: req.body.branch,
             contact_number:req.body.contactnumber,
-            email: req.body.email,
-            img : "defaultuserimage.jpg",
-            dashimg:[],
+            email: req.body.email
         });
         information.save(function (err, data) {
             console.log(err, data);
-            res.redirect('login');
+            res.send('login');
         });
         // mkdirp('./public/uploads/dashboard_images/'+req.body.username, function (err) {
         //     if (err){
@@ -55,9 +53,9 @@ UserController.prototype = {
                 if (user) {
                     //session create after login with username
                     req.session.username = req.body.username;
-                    res.redirect('profile');
+                    res.send('profile');
                 } else {
-                    res.redirect('/');   
+                    res.send('Username or password is wrong');   
                 }
             }
         });

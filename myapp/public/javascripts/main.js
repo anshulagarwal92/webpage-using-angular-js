@@ -57,6 +57,53 @@ app.controller('contactUs', function($scope, $http){
     }
 });
 
+app.controller('signUp', function($scope, $location, $http){
+    $scope.errors = [];
+    $scope.signup = function(){
+        $http.post('/signup',{
+            name: $scope.name,
+            username: $scope.username,
+            password: $scope.password,
+            reenterpassword: $scope.reenterpassword,
+            age: $scope.age,
+            gender: $scope.sex,
+            skills: $scope.Skills,
+            stream: $scope.branch,
+            contact_number:$scope.contactnumber,
+            email: $scope.email
+        }).success(function(data, status) {
+            // $scope.name = "";
+            // $scope.email1 = "";
+            // $scope.comment = "";
+            $location.path('/login');
+        }).error(function(data, status) { 
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+            $scope.errors.push(status);
+        });
+    }
+});
+
+app.controller('login', function($scope, $http){
+    $scope.errors = [];
+    $scope.login = function(){
+        $http.post('/login',{
+            username:$scope.username,
+            password:$scope.password
+        }).success(function(data, status) {
+            // $scope.name = "";
+            // $scope.email1 = "";
+            // $scope.comment = "";
+            $location.path('/profile');
+        }).error(function(data, status) { 
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+            $scope.codeStatus = data;
+        });
+    }
+});
+
+
 /**
  * Controls all other Pages
  */

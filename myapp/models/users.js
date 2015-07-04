@@ -11,9 +11,7 @@ var User = new Schema({
     "skills":[String],
     "stream":String,
     "contact_number":{type: String},
-    "email":String,
-    "img": String,
-    "dashimg":[],
+    "email":String
 });
 var user = mongoose.model('User', User);
 module.exports = user;
