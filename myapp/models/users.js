@@ -10,7 +10,7 @@ var User = new Schema({
     "gender":{type: String, possibleValues: ['Male','Female']},
     "skills":[String],
     "stream":String,
-    "contact_number":{type: String},
+    "contact_number":String,
     "email":String
 });
 var user = mongoose.model('User', User);

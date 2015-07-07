@@ -36,29 +36,29 @@
 					<!-- radio buttons for gender of user -->
 					<div class="form-group">
 						<label for="gender">Gender:</label><br>
-						<label class="radio-inline"><input type="radio" value = "male" name="sex" checked>Male</label>
-						<label class="radio-inline"><input type="radio" value = "female" name="sex">Female</label>
+						<label class="radio-inline"><input type="radio" ng-model="gender" value = "male" name="gender" checked>Male</label>
+						<label class="radio-inline"><input type="radio" ng-model="gender" value = "female" name="gender">Female</label>
 					</div>
 					<!-- checkbox for skills of user -->
 					<div class="form-group">
 						<label for="skills">Skills:</label><br>
 						<label class="checkbox-inline">
-							<input type="checkbox" name = "Skills" value = 'C'>C
+							<input type="checkbox" ng-model="skills.C" name = "skills.C" value = 'C'>C
 						</label>
 						<label class="checkbox-inline">
-							<input type="checkbox" name = "Skills" value = 'C++'>C++
+							<input type="checkbox" ng-model="skills.Cplusplus" name = "skills.Cplusplus" value = 'Cplusplus'>C++
 						</label>
 						<label class="checkbox-inline">
-							<input type="checkbox" name = "Skills"  value = 'JAVA'>JAVA
+							<input type="checkbox" ng-model="skills.JAVA" name = "skills.JAVA" value = 'JAVA'>JAVA
 						</label>
 						<label class="checkbox-inline">
-							<input type="checkbox" name = "Skills"  value = 'PHP'>PHP
+							<input type="checkbox" ng-model="skills.PHP" name = "skills" value = 'PHP'>PHP
 						</label>
 					</div>
 					<!-- select menu for stream of user -->
 					<div class="form-group">
 						<label for="stream">Stream:</label><br>
-						<select class="form-control" name = "branch">
+						<select class="form-control" ng-model = "stream" name = "branch">
 						    <option name = "stream" value="Electronics and communication Engineering">Electronics and communication Engineering</option>
 						    <option name = "stream" value="Computer Science Engineering">Computer Science Engineering</option>
 						    <option name = "stream" value="Electrical Engineering">Electrical Engineering</option>
@@ -67,14 +67,15 @@
 					</div>
 					<!-- field for contact number of user -->
 					<div class="form-group">
-						<label for="contactnumber">Contact Number:</label>
-						<input type="text" name = "contactnumber" class="form-control" id="contactnumber" ng-model = "contactnumber" placeholder="Enter mobile number">
+						<label for="contact">Contact Number:</label>
+						<input type="text" name = "contact" class="form-control" id="contact" ng-model = "contact" placeholder="Enter mobile number">
 					</div>
 					<!-- field for email of user -->
 					<div class="form-group">
 						<label for="email">Email:</label>
 						<input type="text" name = "email" ng-model = "email" class="form-control" id="email" placeholder="Enter email">
 					</div>
+					<p ng-model = "signup">{{codeStatus}}</p>
 					<button type="button" ng-click = "signup()"class="btn btn-default" style="margin: 0 0 0 34%;">Submit</button>
 				</form>
 			</div>

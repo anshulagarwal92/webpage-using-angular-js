@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    </head>
+    <body>
+        <div class="container" ng-controller="editProfile">
+            <div class="col-xs-12 col-md-8">
+                <label class="signup_tag" for="editprofile">Edit Profile</label>
+                <div class = "signup_form_1"class = "col-xs-12 col-md-8">
+                    <form role="form" action="/editprofile" method = "POST">
+                        <!-- field for Name of user -->
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" ng-model = "name" name = "name" placeholder="Enter name">
+                        </div>
+                        <!-- field for username of user -->
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="username" class="form-control" id="username" ng-model = "username" name = "username" placeholder="Enter username">
+                        </div>
+                        <!-- field for password of user -->
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name = "password" class="form-control" id="password" ng-model = "password" placeholder="Enter password">
+                        </div>
+                        <!-- field for reenter password of user -->
+                        <div class="form-group">
+                            <label for="reenterpassword">Re-enter Password:</label>
+                            <input type="password" name = "reenterpassword" class="form-control" id="reenterpassword" ng-model = "reenterpassword" placeholder="Re-Enter password">
+                        </div>
+                        <!-- field for age of user -->
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" min = "18" max = "70" name = "age" class="form-control" id="age" ng-model = "age" placeholder="Enter age">
+                        </div>
+                        <!-- radio buttons for gender of user -->
+                        <div class="form-group">
+                            <label for="gender">Gender:</label><br>
+                            <label class="radio-inline"><input type="radio" ng-model="gender" value = "male" name="gender" checked>Male</label>
+                            <label class="radio-inline"><input type="radio" ng-model="gender" value = "female" name="gender">Female</label>
+                        </div>
+                        <!-- checkbox for skills of user -->
+                        <!-- <div class="form-group">
+                            <label for="skills">Skills:</label><br>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="skills.C" name = "skills.C" value = 'C'>C
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="skills.Cplusplus" name = "skills.Cplusplus" value = 'Cplusplus'>C++
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="skills.JAVA" name = "skills.JAVA" value = 'JAVA'>JAVA
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="skills.PHP" name = "skills" value = 'PHP'>PHP
+                            </label>
+                        </div> -->
+                        <!-- select menu for stream of user -->
+                        <div class="form-group">
+                            <label for="stream">Stream:</label><br>
+                            <select class="form-control" ng-model = "stream" name = "branch">
+                                <option name = "stream" value="Electronics and communication Engineering">Electronics and communication Engineering</option>
+                                <option name = "stream" value="Computer Science Engineering">Computer Science Engineering</option>
+                                <option name = "stream" value="Electrical Engineering">Electrical Engineering</option>
+                                <option name = "stream" value="Mechanical Engineering">Mechanical Engineering</option>
+                            </select>
+                        </div>
+                        <!-- field for contact number of user -->
+                        <div class="form-group">
+                            <label for="contact">Contact Number:</label>
+                            <input type="text" name = "contact" class="form-control" id="contact" ng-model = "contact" placeholder="Enter mobile number">
+                        </div>
+                        <!-- field for email of user -->
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" name = "email" ng-model = "email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <p ng-model = "profilePage">{{ codeStatus }}</p>
+                        <button type="button" ng-click = "editprofile()"class="btn btn-default" style="margin: 0 0 0 34%;">Submit</button>
+                    </form>
+                </div>
+            </div>   
+        </div>
+    </body>
+</html>

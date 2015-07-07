@@ -25,6 +25,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/signup", {templateUrl: "../views/signup.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "/views/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "/views/contact_us.html", controller: "PageCtrl"})
+    .when("/profile", {templateUrl: "/views/profile.html", controller: "PageCtrl"})
+    .when("/dashboard", {templateUrl: "/views/dashboard.html", controller: "PageCtrl"})
     .otherwise({
         templateUrl: "/views/404.html", controller: "PageCtrl"
     });
@@ -36,73 +38,6 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
     console.log("Blog Controller reporting for duty.");
 });
-
-app.controller('contactUs', function($scope, $http){
-    $scope.errors = [];
-    $scope.contactus = function(){
-        $http.post('/contact_us',{
-            name:$scope.name,
-            email:$scope.email1,
-            comment:$scope.comment,
-        }).success(function(data, status) {
-            // $scope.name = "";
-            // $scope.email1 = "";
-            // $scope.comment = "";
-            $scope.codeStatus = data;
-        }).error(function(data, status) { 
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-            $scope.errors.push(status);
-        });
-    }
-});
-
-app.controller('signUp', function($scope, $location, $http){
-    $scope.errors = [];
-    $scope.signup = function(){
-        $http.post('/signup',{
-            name: $scope.name,
-            username: $scope.username,
-            password: $scope.password,
-            reenterpassword: $scope.reenterpassword,
-            age: $scope.age,
-            gender: $scope.sex,
-            skills: $scope.Skills,
-            stream: $scope.branch,
-            contact_number:$scope.contactnumber,
-            email: $scope.email
-        }).success(function(data, status) {
-            // $scope.name = "";
-            // $scope.email1 = "";
-            // $scope.comment = "";
-            $location.path('/login');
-        }).error(function(data, status) { 
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-            $scope.errors.push(status);
-        });
-    }
-});
-
-app.controller('login', function($scope, $http){
-    $scope.errors = [];
-    $scope.login = function(){
-        $http.post('/login',{
-            username:$scope.username,
-            password:$scope.password
-        }).success(function(data, status) {
-            // $scope.name = "";
-            // $scope.email1 = "";
-            // $scope.comment = "";
-            $location.path('/profile');
-        }).error(function(data, status) { 
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-            $scope.codeStatus = data;
-        });
-    }
-});
-
 
 /**
  * Controls all other Pages
